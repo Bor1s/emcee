@@ -2,6 +2,8 @@ module Emcee
   # Document is responsible for interacting with individual html nodes that
   # make up the parsed document.
   class Node
+    attr_reader :parser_node
+
     def initialize(parser_node)
       @parser_node = parser_node
     end

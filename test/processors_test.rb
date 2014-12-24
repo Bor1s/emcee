@@ -13,6 +13,15 @@ class ResolverStub
     @contents = contents
   end
 
+  def context
+    c = Class.new do
+      def root_path
+        ''
+      end
+    end
+    c.new
+  end
+
   def absolute_path(path)
     "/#{path}"
   end
@@ -66,7 +75,7 @@ class ProcessorsTest < ActiveSupport::TestCase
 
     correct = <<-EOS.strip_heredoc
       <link rel="import" href="test.html">
-      <style>/* contents */</style>
+      <link rel="stylesheet" href="/assets/test.css">
       <script src="test.js"></script>
       <p>test</p>
     EOS

@@ -1,6 +1,8 @@
 module Emcee
   # Resolver is responsible for interfacing with Sprockets.
   class Resolver
+    attr_reader :context
+
     def initialize(context)
       @context = context
       @directory = File.dirname(context.pathname)

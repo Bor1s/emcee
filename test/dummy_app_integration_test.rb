@@ -17,29 +17,21 @@ class DummyAppIntegrationTest < ActionController::TestCase
       }).call(this);
       </script>
       <p>Test CoffeeScript</p>
-      <style>p {
-        color: red; }
-      </style>
+      <link rel="stylesheet" href="/assets/compile_scss/test.scss">
       <p>Test scss</p>
       <link rel="stylesheet" href="//fonts.googleapis.com/css?family=RobotoDraft:regular,bold,italic,thin,light,bolditalic,black,medium&lang=en">
       <p>Test external css</p>
       <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
       <p>Test external js</p>
       <p>Test simple import</p>
-      <style>p {
-        color: red;
-      }
-      </style>
+      <link rel="stylesheet" href="/assets/simple_css/test.css">
       <p>Test css</p>
       <script>var hello = "world";
       </script>
       <p>Test js</p>
       <polymer-element name="test" attributes="hidden src">
         <template>
-          <style>:host {
-        color: pink;
-      }
-      </style>
+          <link rel="stylesheet" href="/assets/template/test.css">
           <core-icon src="{{ iconSrc }}"></core-icon>
           <p hidden?="{{ hidden }}">Test template</p>
         </template>

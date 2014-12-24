@@ -19,8 +19,8 @@ module Emcee
           path = @resolver.absolute_path(node.path)
           return unless @resolver.should_inline?(path)
           content = @resolver.evaluate(path)
-          node.replace("style", content)
-          @resolver.depend_on_asset(path)
+          new_path = path.sub(@resolver.context.root_path, '/assets')
+          node.parser_node.attributes['href'].value = new_path
         end
       end
     end
