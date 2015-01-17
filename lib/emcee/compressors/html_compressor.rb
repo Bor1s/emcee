@@ -9,7 +9,8 @@ module Emcee
       BLANK_LINES       = /^[\s]*$\n/
 
       def compress(string)
-        ops = [HTML_COMMENTS, JS_MULTI_COMMENTS, JS_COMMENTS, BLANK_LINES]
+        #ops = [HTML_COMMENTS, JS_MULTI_COMMENTS, JS_COMMENTS, BLANK_LINES]
+        ops = [HTML_COMMENTS, JS_COMMENTS, BLANK_LINES]
 
         ops.reduce(string) do |output, op|
           output.gsub(op, "")
